@@ -18,6 +18,15 @@
 @import 'font-awesome';
 
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 div.field, div.actions {
   margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
 }
