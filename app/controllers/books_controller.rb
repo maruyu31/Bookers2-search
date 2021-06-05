@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :ensure_correct_user, only:[:edit]
 
   def index
-    @book = Book.new
+    @newbook = Book.new
     @books = Book.all
   end
 
@@ -20,7 +20,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
-      redirect_to book_path(book.id), notice: "You have created book successfully"
+      redirect_to book_path(@book.id), notice: "You have created book successfully"
     else
       render :index
     end
